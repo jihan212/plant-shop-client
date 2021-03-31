@@ -1,0 +1,10 @@
+.products{
+    float: left;
+}
+.card {
+    width: 23rem;
+    height: auto;
+    margin: 5px;
+    padding: 3px;
+    border:1px solid lightgray;
+}
