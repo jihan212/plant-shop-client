@@ -13,7 +13,7 @@ const Admin = () => {
             price: data.price,
             imageURL : imageURL
         }
-        const url = `http://localhost:2000/admin`;
+        const url = `https://secure-brook-07656.herokuapp.com/admin`;
 
         fetch(url,{
             method: 'POST',
