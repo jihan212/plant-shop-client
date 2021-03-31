@@ -1,0 +1,33 @@
+.form{
+    width:75%;
+    border-radius:10px;
+    border:1px solid lightgray;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+.buttons Button{
+    width:30%;
+    height: 40px;
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    border-radius: 25px;
+}
+.submitBtn{
+    color:yellowgreen;
+    width:30%;
+    height: 40px;
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    border-radius: 25px;
+    border: 1px solid yellowgreen;
+}
+.submitBtn:hover{
+    background-color:yellowgreen;
+    border: 1px solid yellowgreen;
+}
