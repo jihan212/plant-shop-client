@@ -6,13 +6,10 @@ const Product = ({product}) => {
     return (
         <div className="products">
             <Card className="card">
-                <Card.Img variant="top" src={product.img} alt="" />
+                <Card.Img variant="top" src={product.imageURL} alt="" />
                 <Card.Body>
-                <Card.Title>{product.name}</Card.Title>
-                <Card.Text>
-                    Some quick example text to build on the card title and make up the bulk of
-                    the card's content.
-                </Card.Text>
+                <h1>{product.name}</h1>
+                <Card.Text> Price : ${product.price}</Card.Text>
                 <Button variant="primary">Buy Now</Button>
             </Card.Body>
             </Card>
