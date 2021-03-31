@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import {Card ,Button} from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import './Product.css';
 
 const Product = ({product}) => {
@@ -10,7 +11,7 @@ const Product = ({product}) => {
                 <Card.Body>
                 <h1>{product.name}</h1>
                 <Card.Text> Price : ${product.price}</Card.Text>
-                <Button variant="primary">Buy Now</Button>
+                <button ><Link to="/checkout">Buy Now</Link></button>
             </Card.Body>
             </Card>
         </div>
