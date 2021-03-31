@@ -1,7 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
 import Navigation from './components/Navigation/Navigation';
-import Home from './components/home/Home';
+import Home from './components/Home/Home';
+import Admin from './components/Admin/Admin';
 import {
   BrowserRouter as Router,
   Switch,
@@ -17,6 +18,9 @@ function App() {
         <Switch>
           <Route exact path="/">
               <Home />
+          </Route>
+          <Route path="/admin">
+             <Admin></Admin>
           </Route>
         </Switch>
       </Router>
