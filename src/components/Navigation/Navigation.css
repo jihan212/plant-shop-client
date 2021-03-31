@@ -1,21 +1,9 @@
-.navigation{
-    background-color: rgb(194, 226, 107);
-    width: 100%;
-    height: 40px;
+.mr-auto a{
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
 }
-.navigation ul{
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-.navigation li{
-    display: inline;
-    font-size: 25px;
-    font-weight: bold;
-    padding : 1px 10px;
-    float: right;
-}
-.navigation ul li a{
+.Button a{
     text-decoration: none;
     color: black;
 }
