@@ -10,6 +10,7 @@ import {
   Link
 } from "react-router-dom";
 import Login from './components/Login/Login';
+import Checkout from './components/Checkout/Checkout';
 
 function App() {
   return (
@@ -25,6 +26,9 @@ function App() {
           </Route>
           <Route path="/login">
              <Login></Login>
+          </Route>
+          <Route path="/checkout">
+             <Checkout></Checkout>
           </Route>
         </Switch>
       </Router>
