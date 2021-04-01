@@ -11,7 +11,7 @@ import Login from './components/Login/Login';
 import Checkout from './components/Checkout/Checkout';
 import { createContext, useState } from 'react';
 
-const UserContext = createContext();
+export const UserContext = createContext();
 
 function App() {
   const [loggedinUser , setLoggedinUser] = useState({});

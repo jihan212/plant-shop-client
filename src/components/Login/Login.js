@@ -1,16 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './Login.css';
 import {Form , Button } from 'react-bootstrap';
 import { FaGoogle,FaFacebook } from 'react-icons/fa';
 import firebase from "firebase/app";
 import "firebase/auth";
 import firebaseConfig from './firebase.config';
+import { UserContext } from '../../App';
 
 if (!firebase.apps.length) {
     firebase.initializeApp(firebaseConfig);
     }
 
 const Login = () => {
+
+    const [loggedinUser, setLoggedinUser] = useContext(UserContext);
 
     const handleGoogleLogin = () => {
         
@@ -20,7 +23,8 @@ const Login = () => {
         .then((result) => {
 
             const {displayName, email} = result.user;
-            const loggedinUser = {name: displayName, email}
+            const signedInUser = {name: displayName, email};
+            setLoggedinUser(signedInUser);
 
         }).catch((error) => {
             var errorCode = error.code;
