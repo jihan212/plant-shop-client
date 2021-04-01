@@ -29,12 +29,20 @@ function App() {
           <PrivateRoute path="/admin">
              <Admin></Admin>
           </PrivateRoute>
-          <PrivateRoute path="/checkout">
+           {/*--------- Apatoto  -------*/}
+          <Route path="/checkout">
+          <Checkout></Checkout>
+          </Route>
+          <Route path="/order">
+          <Order></Order>
+          </Route>
+           {/*--------- Apatoto  -------*/}
+          {/* <PrivateRoute path="/checkout">
              <Checkout></Checkout>
           </PrivateRoute>
           <PrivateRoute path="/order">
              <Order></Order>
-          </PrivateRoute>
+          </PrivateRoute> */}
         </Switch>
       </Router>
       </UserContext.Provider>
