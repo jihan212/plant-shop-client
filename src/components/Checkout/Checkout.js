@@ -1,5 +1,5 @@
 import 'date-fns';
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Grid from '@material-ui/core/Grid';
 import DateFnsUtils from '@date-io/date-fns';
 import {
@@ -27,29 +27,27 @@ const useStyles = makeStyles({
   },
 });
 
-function createData(name, quantity, price) {
-  return { name, quantity, price };
+function createData(name, price) {
+  return { name, price };
 }
 
 const rows = [
-  createData('Product', 1, 100),
-  createData('Total', 1, 100),
+  createData('Product', 100),
+  createData('Total', 100),
 ];
 
 
 
 const Checkout = () => {
     const [loggedinUser, setLoggedinUser] = useContext(UserContext);
-    const [selectedDate, setSelectedDate] = useState({
-        checkIn : new Date(),
-        checkOut : new Date()
-    });
+    const [selectedDate, setSelectedDate] = useState({ checkOut : new Date() });
+    const [product, setProduct] = useState([]);
 
-    const handleCheckIn = (date) => {
-        const newDates = {...selectedDate}
-        newDates.checkIn = date;
-        setSelectedDate(newDates);
-    };
+    // useEffect((id) => {
+    //   fetch=`http://localhost:2000/products/${id}`
+    //   .then (res => res.json())
+    //   .then (data => setProduct(data))
+    // },[id]);
 
     const handleCheckOut = (date) => {
         const newDates = {...selectedDate}
@@ -78,57 +76,40 @@ const Checkout = () => {
           <p>Loggedin User: {loggedinUser.name}</p>
           
             <MuiPickersUtilsProvider utils={DateFnsUtils}>
-      <Grid container justify="space-around">
-        <KeyboardDatePicker
-          disableToolbar
-          variant="inline"
-          format="dd/MM/yyyy"
-          margin="normal"
-          id="date-picker-inline"
-          label="Check In"
-          value={selectedDate.checkIn}
-          onChange={handleCheckIn}
-          KeyboardButtonProps={{
-            'aria-label': 'change date',
-          }}
-        />
-        <KeyboardDatePicker
-          margin="normal"
-          id="date-picker-dialog"
-          label="Check Out"
-          format="dd/MM/yyyy"
-          value={selectedDate.checkOut}
-          onChange={handleCheckOut}
-          KeyboardButtonProps={{
-            'aria-label': 'change date',
-          }}
-        />
-      </Grid>
-      <TableContainer component={Paper}>
-      <Table className={classes.table} aria-label="simple table">
-        <TableHead>
-          <TableRow>
-            <TableCell>Description</TableCell>
-            <TableCell align="right">Quantity</TableCell>
-            <TableCell align="right">Price</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {rows.map((row) => (
-            <TableRow key={row.name}>
-              <TableCell component="th" scope="row">
-                {row.name}
-              </TableCell>
-              <TableCell align="right">{row.quantity}</TableCell>
-              <TableCell align="right">{row.price}</TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
-      <Button onClick={handleOrder} variant="contained" color="primary"> Check Out </Button>
-    </MuiPickersUtilsProvider>
-    <Order></Order>
+              <Grid container justify="space-around">
+                <KeyboardDatePicker
+                  margin="normal"
+                 id="date-picker-dialog"
+                  label="Check Out"
+                  format="dd/MM/yyyy"
+                  value={selectedDate.checkOut}
+                  onChange={handleCheckOut}
+                  KeyboardButtonProps={{ 'aria-label': 'change date', }}
+                 />
+              </Grid>
+              <TableContainer component={Paper}>
+                <Table className={classes.table} aria-label="simple table">
+                <TableHead>
+                  <TableRow>
+                    <TableCell>Description</TableCell>
+                    <TableCell align="right">Price</TableCell>
+                  </TableRow>
+                </TableHead>
+                <TableBody>
+                  {rows.map((row) => (
+                <TableRow key={row.name}>
+                  <TableCell component="th" scope="row">
+                     {row.name}
+                  </TableCell>
+                  <TableCell align="right">{row.price}</TableCell>
+                </TableRow>
+                ))}
+                </TableBody>
+                </Table>
+              </TableContainer>
+              <Button onClick={handleOrder} variant="contained" color="primary"> Check Out </Button>
+              </MuiPickersUtilsProvider>
+              <Order></Order>
         </div>
     );
 };

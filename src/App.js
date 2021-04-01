@@ -8,6 +8,7 @@ import Checkout from './components/Checkout/Checkout';
 import { createContext, useState } from 'react';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import Order from './components/Order/Order';
+import ProductDetail from './components/ProductDetail/ProductDetail';
 
 export const UserContext = createContext();
 
@@ -29,6 +30,9 @@ function App() {
              <Admin></Admin>
           </PrivateRoute>
            {/*--------- Apatoto  -------*/}
+           <Route path="/productDetail">
+             <ProductDetail></ProductDetail>
+          </Route>
           <Route path="/checkout">
           <Checkout></Checkout>
           </Route>

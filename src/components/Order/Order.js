@@ -11,7 +11,6 @@ const Order = () => {
     },[])
     return (
         <div>
-            <h1>This is order</h1>
             <h2>You have {orders.length} orders</h2>
             {
                 orders.map(order => <li>{order.name} from {(new Date(order.checkIn).toDateString('dd/MM/yyyy'))} to {(new Date(order.checkOut).toDateString('dd/MM/yyyy'))}</li>)
