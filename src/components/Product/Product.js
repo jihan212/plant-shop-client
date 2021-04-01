@@ -11,7 +11,7 @@ const Product = ({product}) => {
                 <Card.Body>
                 <h1>{product.name}</h1>
                 <Card.Text> Price : ${product.price}</Card.Text>
-                <button ><Link to="/checkout">Buy Now</Link></button>
+                <button ><Link to="/checkout/id">Buy Now</Link></button>
             </Card.Body>
             </Card>
         </div>

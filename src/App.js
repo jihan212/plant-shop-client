@@ -29,17 +29,19 @@ function App() {
           <PrivateRoute path="/admin">
              <Admin></Admin>
           </PrivateRoute>
-           {/*--------- Apatoto  -------*/}
+           
+
            <Route path="/productDetail">
              <ProductDetail></ProductDetail>
           </Route>
-          <Route path="/checkout">
+          <Route path="/checkout/id">
           <Checkout></Checkout>
           </Route>
           <Route path="/order">
           <Order></Order>
           </Route>
-           {/*--------- Apatoto  -------*/}
+          
+
           {/* <PrivateRoute path="/checkout">
              <Checkout></Checkout>
           </PrivateRoute>

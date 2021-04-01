@@ -1,5 +1,6 @@
 import 'date-fns';
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState} from 'react';
+import { useParams } from 'react-router-dom';
 import Grid from '@material-ui/core/Grid';
 import DateFnsUtils from '@date-io/date-fns';
 import {
@@ -43,11 +44,12 @@ const Checkout = () => {
     const [selectedDate, setSelectedDate] = useState({ checkOut : new Date() });
     const [product, setProduct] = useState([]);
 
-    // useEffect((id) => {
-    //   fetch=`http://localhost:2000/products/${id}`
-    //   .then (res => res.json())
-    //   .then (data => setProduct(data))
-    // },[id]);
+    const {id} = useParams();
+    useEffect((id) => {
+      fetch=`http://localhost:2000/products/${id}`
+      .then (res => res.json())
+      .then (data => setProduct(data))
+    },[id]);
 
     const handleCheckOut = (date) => {
         const newDates = {...selectedDate}
