@@ -9,10 +9,16 @@ import {
 } from "react-router-dom";
 import Login from './components/Login/Login';
 import Checkout from './components/Checkout/Checkout';
+import { createContext, useState } from 'react';
+
+const UserContext = createContext();
 
 function App() {
+  const [loggedinUser , setLoggedinUser] = useState({});
   return (
     <div className="Container">
+      <UserContext.Provider value={[loggedinUser, setLoggedinUser]}>
+        <p>Name:{loggedinUser.name}</p>
       <Router>
       <Navigation></Navigation>
         <Switch>
@@ -30,6 +36,7 @@ function App() {
           </Route>
         </Switch>
       </Router>
+      </UserContext.Provider>
     </div>
   );
 }

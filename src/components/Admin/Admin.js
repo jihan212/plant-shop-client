@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
+import './Admin.css';
 
 const Admin = () => {
     const { register, handleSubmit } = useForm();
@@ -42,9 +43,14 @@ const Admin = () => {
     }
 
     return (
-        <div>
-            <h1>THIS IS ADMIN</h1>
-            <form onSubmit={handleSubmit(onSubmit)}>
+        <div className="admin">
+            <div className="side-div">
+                <h2><strong>Manage Products</strong></h2>
+                <h2><strong>Add Product</strong></h2>
+            </div>
+            <div className="form-div">
+            <form className="submitForm" onSubmit={handleSubmit(onSubmit)}>
+                <h3>Input Product Information</h3>
             <input name="name" defaultValue="Product Name" ref={register} />
             <br/>
             <input name="price" defaultValue="Product Price" ref={register} />
@@ -53,6 +59,7 @@ const Admin = () => {
             <br/>
             <input type="submit" />
             </form>
+            </div>
         </div>
     );
 };

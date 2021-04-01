@@ -19,7 +19,9 @@ const Login = () => {
         .signInWithPopup(provider)
         .then((result) => {
 
-            const user = result.user;
+            const {displayName, email} = result.user;
+            const loggedinUser = {name: displayName, email}
+
         }).catch((error) => {
             var errorCode = error.code;
             var errorMessage = error.message;

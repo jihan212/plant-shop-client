@@ -1,0 +1,32 @@
+.admin{
+    width:100%;
+    display:inline-flex;
+}
+.submitForm{
+    width:75%;
+    border-radius:10px;
+    border:1px solid yellowgreen;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+.submitForm input{
+    width:90%;
+    height:30px;
+    margin: 5px;
+    border:1px solid black;
+    border-radius: 10px;
+}
+.side-div{
+    width:20%;
+    height:500px;
+    background-color:yellowgreen;
+    display:block;
+    margin: 5px;
+    padding: 5px;
+}
+.form-div{
+    width:70%;
+    display:block;
+}
