@@ -17,6 +17,7 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import Order from '../Order/Order';
 
 
 
@@ -57,7 +58,16 @@ const Checkout = () => {
     } 
 
     const handleOrder = () => {
-
+      const newOrder = {...loggedinUser, ...selectedDate};
+      fetch('http://localhost:2000/addOrder', {
+        method : 'POST',
+        headers : { 'content-type': 'application/json' },
+        body : JSON.stringify(newOrder)
+      })
+      .then (res => res.json())
+      .then (data => {
+        console.log(data);
+      })
     }
 
     const classes = useStyles();
@@ -118,6 +128,7 @@ const Checkout = () => {
     </TableContainer>
       <Button onClick={handleOrder} variant="contained" color="primary"> Check Out </Button>
     </MuiPickersUtilsProvider>
+    <Order></Order>
         </div>
     );
 };
