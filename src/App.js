@@ -2,14 +2,11 @@ import './App.css';
 import Navigation from './components/Navigation/Navigation';
 import Home from './components/Home/Home';
 import Admin from './components/Admin/Admin';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Login from './components/Login/Login';
 import Checkout from './components/Checkout/Checkout';
 import { createContext, useState } from 'react';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 
 export const UserContext = createContext();
 
@@ -25,9 +22,9 @@ function App() {
           <Route exact path="/">
               <Home />
           </Route>
-          <Route path="/admin">
+          <PrivateRoute path="/admin">
              <Admin></Admin>
-          </Route>
+          </PrivateRoute>
           <Route path="/login">
              <Login></Login>
           </Route>
