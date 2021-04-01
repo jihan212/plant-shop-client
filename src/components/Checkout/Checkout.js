@@ -59,7 +59,7 @@ const Checkout = () => {
 
     const handleOrder = () => {
       const newOrder = {...loggedinUser, ...selectedDate};
-      fetch('http://localhost:2000/addOrder', {
+      fetch('https://secure-brook-07656.herokuapp.com/addOrder', {
         method : 'POST',
         headers : { 'content-type': 'application/json' },
         body : JSON.stringify(newOrder)
