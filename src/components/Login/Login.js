@@ -55,12 +55,12 @@ const Login = () => {
                     <Form.Control type="password" placeholder="Password" />
                 </Form.Group>
 
-                <Button variant="outline-dark" className="submitBtn" type="submit"> Login </Button>
+                <Button onClick={handleGoogleLogin} variant="outline-dark" className="submitBtn" type="submit"> Login </Button>
             </Form>
             </div>
             <div className="buttons">
                 <Button onClick={handleGoogleLogin} variant="outline-dark"> <FaGoogle /> Continue With Google </Button>
-                <Button variant="outline-dark"> <FaFacebook /> Continue With Facebook </Button>
+                <Button onClick={handleGoogleLogin} variant="outline-dark"> <FaFacebook /> Continue With Facebook </Button>
             </div>
         </div>
     );

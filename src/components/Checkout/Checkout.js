@@ -65,6 +65,7 @@ const Checkout = () => {
 
     return (
         <div>
+          <p>Loggedin User: {loggedinUser.name}</p>
           
             <MuiPickersUtilsProvider utils={DateFnsUtils}>
       <Grid container justify="space-around">
