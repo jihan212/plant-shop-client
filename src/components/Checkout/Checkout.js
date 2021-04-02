@@ -85,7 +85,7 @@ const Checkout = () => {
                 <KeyboardDatePicker
                   margin="normal"
                  id="date-picker-dialog"
-                  label="Check Out"
+                  label="Order at"
                   format="dd/MM/yyyy"
                   value={selectedDate.checkOut}
                   onChange={handleCheckOut}
@@ -96,7 +96,7 @@ const Checkout = () => {
                 <Table className={classes.table} aria-label="simple table">
                 <TableHead>
                   <TableRow>
-                    <TableCell>Description</TableCell>
+                    <TableCell>Product Name</TableCell>
                     <TableCell align="right">Price</TableCell>
                   </TableRow>
                 </TableHead>
@@ -113,7 +113,7 @@ const Checkout = () => {
                 </Table>
               </TableContainer>
               </MuiPickersUtilsProvider>
-              <Button onClick={handleOrder} variant="contained" color="primary"> Check Out </Button>
+              <Button onClick={handleOrder} variant="contained" color="primary"> Order Now </Button>
               <h1>See your Orders at <Link to="/order">Order</Link> section &#128512;</h1>
         </div>
     );

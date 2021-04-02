@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
+import { Link } from 'react-router-dom';
 import './Admin.css';
 
 const Admin = () => {
@@ -45,8 +46,8 @@ const Admin = () => {
     return (
         <div className="admin">
             <div className="side-div">
-                <h2><strong>Manage Products</strong></h2>
-                <h2><strong>Add Product</strong></h2>
+                <h2><Link to="/productDetail">Manage Products</Link></h2>
+                <h2>Add Product</h2>
             </div>
             <div className="form-div">
             <form className="submitForm" onSubmit={handleSubmit(onSubmit)}>
