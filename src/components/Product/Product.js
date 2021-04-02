@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import './Product.css';
 
 const Product = ({product}) => {
+    const {_id} = product;
     return (
         <div className="products">
             <Card className="card">
@@ -11,7 +12,7 @@ const Product = ({product}) => {
                 <Card.Body>
                 <h1>{product.name}</h1>
                 <Card.Text> Price : ${product.price}</Card.Text>
-                <button ><Link to="/checkout/id">Buy Now</Link></button>
+                <button ><Link to={"/checkout/"+_id}>Buy Now</Link></button>
             </Card.Body>
             </Card>
         </div>

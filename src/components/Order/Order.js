@@ -13,7 +13,7 @@ const Order = () => {
         <div>
             <h2>You have {orders.length} orders</h2>
             {
-                orders.map(order => <li>{order.name} from {(new Date(order.checkIn).toDateString('dd/MM/yyyy'))} to {(new Date(order.checkOut).toDateString('dd/MM/yyyy'))}</li>)
+                orders.map(order => <li>{order.name} at {(new Date(order.checkOut).toDateString('dd/MM/yyyy'))}</li>)
             }
         </div>
     );

@@ -34,11 +34,15 @@ function App() {
            <Route path="/productDetail">
              <ProductDetail></ProductDetail>
           </Route>
-          <Route path="/checkout/id">
+          {/* <Route path="/checkout/id">
           <Checkout></Checkout>
-          </Route>
+          </Route> */}
+          {/* <Route exact path="/checkout/:id" component={Checkout} /> */}
           <Route path="/order">
           <Order></Order>
+          </Route>
+          <Route exact path="/checkout/:id">
+          <Checkout></Checkout>
           </Route>
           
 

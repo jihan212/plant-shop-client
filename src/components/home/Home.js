@@ -12,7 +12,7 @@ const Home = () => {
     return (
         <div>
             {
-                products.map(product => <Product product={product}></Product>)
+                products.map((product,i) => <Product key={i} product={product}></Product>)
             }
         </div>
     );

@@ -44,11 +44,14 @@ const Checkout = () => {
     const [selectedDate, setSelectedDate] = useState({ checkOut : new Date() });
     const [product, setProduct] = useState([]);
 
-    const {id} = useParams();
-    useEffect((id) => {
-      fetch=`http://localhost:2000/products/${id}`
+    const { id } = useParams();
+
+    useEffect(() => {
+
+      fetch(`http://localhost:2000/products/${id}`)
       .then (res => res.json())
       .then (data => setProduct(data))
+      
     },[id]);
 
     const handleCheckOut = (date) => {
@@ -101,9 +104,9 @@ const Checkout = () => {
                   {rows.map((row) => (
                 <TableRow key={row.name}>
                   <TableCell component="th" scope="row">
-                     {row.name}
+                     {product.name}
                   </TableCell>
-                  <TableCell align="right">{row.price}</TableCell>
+                  <TableCell align="right">{product.price}</TableCell>
                 </TableRow>
                 ))}
                 </TableBody>
