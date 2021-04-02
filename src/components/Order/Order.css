@@ -1,0 +1,18 @@
+.order{
+    align-items: center;
+}
+.order h1{
+    margin: 10px auto;
+    text-align: center;
+    font-weight: bold;
+}
+.order li{
+    list-style: none;
+    font-size: 15px;
+    font-weight: bold;
+    border: 1px solid lightgray;
+    padding:10px;
+    margin: 10px auto;
+    width: 70%;
+    border-radius:10px;
+}

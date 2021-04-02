@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { UserContext } from '../../App';
+import './Order.css'
 
 const Order = () => {
     const [loggedinUser, setLoggedinUser] = useContext(UserContext);
@@ -10,10 +11,10 @@ const Order = () => {
         .then (data => setOrders(data))
     },[])
     return (
-        <div>
-            <h2>You have {orders.length} orders</h2>
+        <div className="order">
+            <h1>You have {orders.length} orders</h1>
             {
-                orders.map(order => <li>{order.name} at {(new Date(order.checkOut).toDateString('dd/MM/yyyy'))}</li>)
+                orders.map(order => <li>{order.name} ordered at  {(new Date(order.checkOut).toDateString('dd/MM/yyyy'))}</li>)
             }
         </div>
     );

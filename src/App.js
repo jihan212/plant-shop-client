@@ -29,18 +29,14 @@ function App() {
           <PrivateRoute path="/admin">
              <Admin></Admin>
           </PrivateRoute>
+          <PrivateRoute path="/order">
+             <Order></Order>
+          </PrivateRoute>
            
-
            <Route path="/productDetail">
              <ProductDetail></ProductDetail>
           </Route>
-          {/* <Route path="/checkout/id">
-          <Checkout></Checkout>
-          </Route> */}
           {/* <Route exact path="/checkout/:id" component={Checkout} /> */}
-          <Route path="/order">
-          <Order></Order>
-          </Route>
           <Route exact path="/checkout/:id">
           <Checkout></Checkout>
           </Route>
@@ -48,10 +44,7 @@ function App() {
 
           {/* <PrivateRoute path="/checkout">
              <Checkout></Checkout>
-          </PrivateRoute>
-          <PrivateRoute path="/order">
-             <Order></Order>
-          </PrivateRoute> */}
+        </PrivateRoute>*/}
         </Switch>
       </Router>
       </UserContext.Provider>
