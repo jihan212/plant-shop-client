@@ -14,7 +14,7 @@ const Order = () => {
         <div className="order">
             <h1>You have {orders.length} orders</h1>
             {
-                orders.map(order => <li>{order.name} ordered at  {(new Date(order.checkOut).toDateString('dd/MM/yyyy'))}</li>)
+                orders.map(order => <li>{order.email} ordered {order.name} at  {(new Date(order.checkOut).toDateString('dd/MM/yyyy'))}</li>)
             }
         </div>
     );

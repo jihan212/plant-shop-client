@@ -36,10 +36,9 @@ function App() {
            <Route path="/productDetail">
              <ProductDetail></ProductDetail>
           </Route>
-          {/* <Route exact path="/checkout/:id" component={Checkout} /> */}
-          <Route exact path="/checkout/:id">
+          <PrivateRoute exact path="/checkout/:id">
           <Checkout></Checkout>
-          </Route>
+          </PrivateRoute>
           
 
           {/* <PrivateRoute path="/checkout">

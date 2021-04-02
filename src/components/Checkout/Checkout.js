@@ -28,17 +28,6 @@ const useStyles = makeStyles({
   },
 });
 
-function createData(name, price) {
-  return { name, price };
-}
-
-const rows = [
-  createData('Product', 100),
-  createData('Total', 100),
-];
-
-
-
 const Checkout = () => {
     const [loggedinUser, setLoggedinUser] = useContext(UserContext);
     const [selectedDate, setSelectedDate] = useState({ checkOut : new Date() });
@@ -48,7 +37,7 @@ const Checkout = () => {
 
     useEffect(() => {
 
-      fetch(`http://localhost:2000/products/${id}`)
+      fetch(`https://secure-brook-07656.herokuapp.com/products/${id}`)
       .then (res => res.json())
       .then (data => setProduct(data))
       
@@ -61,7 +50,7 @@ const Checkout = () => {
     } 
 
     const handleOrder = () => {
-      const newOrder = {...loggedinUser, ...selectedDate};
+      const newOrder = {...loggedinUser, ...selectedDate, ...product};
       fetch('https://secure-brook-07656.herokuapp.com/addOrder', {
         method : 'POST',
         headers : { 'content-type': 'application/json' },
@@ -101,14 +90,12 @@ const Checkout = () => {
                   </TableRow>
                 </TableHead>
                 <TableBody>
-                  {rows.map((row) => (
-                <TableRow key={row.name}>
+                <TableRow>
                   <TableCell component="th" scope="row">
                      {product.name}
                   </TableCell>
                   <TableCell align="right">{product.price}</TableCell>
                 </TableRow>
-                ))}
                 </TableBody>
                 </Table>
               </TableContainer>
