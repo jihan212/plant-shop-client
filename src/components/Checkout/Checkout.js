@@ -1,6 +1,6 @@
 import 'date-fns';
 import React, { useContext, useEffect, useState} from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import Grid from '@material-ui/core/Grid';
 import DateFnsUtils from '@date-io/date-fns';
 import {
@@ -18,7 +18,7 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-import Order from '../Order/Order';
+import './Checkout.css';
 
 
 
@@ -77,7 +77,7 @@ const Checkout = () => {
 
 
     return (
-        <div>
+        <div className="checkout">
           <p>Loggedin User: {loggedinUser.name}</p>
           
             <MuiPickersUtilsProvider utils={DateFnsUtils}>
@@ -112,9 +112,9 @@ const Checkout = () => {
                 </TableBody>
                 </Table>
               </TableContainer>
-              <Button onClick={handleOrder} variant="contained" color="primary"> Check Out </Button>
               </MuiPickersUtilsProvider>
-              <Order></Order>
+              <Button onClick={handleOrder} variant="contained" color="primary"> Check Out </Button>
+              <h1>See your Orders at <Link to="/order">Order</Link> section &#128512;</h1>
         </div>
     );
 };
